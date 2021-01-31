@@ -69,7 +69,7 @@ public class MCQChoiceController {
 	// POST questions list route
 	// This is not working for some reason 
 	@ApiOperation(value = "Creates mcqchoices from a JSON list.")
-	@PostMapping(value = "/QuizManager/mcqchoices/add_list")
+	@PostMapping(value = "/Test/mcqchoices/add_list")
 	public ResponseEntity<Void> addMCQChoice(@Validated @RequestBody List<MCQChoice> JSONMCQChoices) {
 		
         List<MCQChoice> mcqchoiceAdded = mcqchoiceDAO.saveAll(JSONMCQChoices);

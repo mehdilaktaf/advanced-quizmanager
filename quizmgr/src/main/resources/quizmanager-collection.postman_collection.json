@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "1b2a4f83-4121-40b4-80cb-c9995b52dcfd",
+		"name": "quizmanager-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create multiple questions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"questionId\": 1,\r\n        \"questionTitle\": \"Bonjour comment vous allez? \",\r\n        \"topic\": \"French\",\r\n        \"difficulty\": 2\r\n    },\r\n    {\r\n        \"questionId\": 2,\r\n        \"questionTitle\": \"Is Java a compiled language? \",\r\n        \"topic\": \"Java\",\r\n        \"difficulty\": 9001\r\n    },\r\n    {\r\n        \"questionId\": 3,\r\n        \"questionTitle\": \"What is the meaning of life? \",\r\n        \"topic\": \"Philosophy\",\r\n        \"difficulty\": 9001\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/questions/add_list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"questions",
+						"add_list"
+					]
+				},
+				"description": "Create 3 example questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/questions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"questions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a question ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"questionId\": 1,\r\n    \"questionTitle\": \"Bonjour comment allez vous? \",\r\n    \"topic\": \"French\",\r\n    \"difficulty\": 2\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/questions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"questions",
+						""
+					]
+				},
+				"description": "Update a question to correct the title"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a question by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/questions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"questions",
+						"1"
+					]
+				},
+				"description": "Get the third question by Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions by difficulty (=)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/difficulties/equals/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"difficulties",
+						"equals",
+						"2"
+					]
+				},
+				"description": "Get questions with difficulty = 2"
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions by difficulty (>)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/difficulties/greater_than/9000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"difficulties",
+						"greater_than",
+						"9000"
+					]
+				},
+				"description": "Get questions with difficulty > 9000"
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions by difficulty (<)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/difficulties/less_than/9000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"difficulties",
+						"less_than",
+						"9000"
+					]
+				},
+				"description": "Get questions with difficulty < 9000"
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions by topic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/topics/Java",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"topics",
+						"Java"
+					]
+				},
+				"description": "Get all questions with \"Java\" topic"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"questionId\": 4,\r\n    \"questionTitle\": \"What programming language is interpreted?\",\r\n    \"topic\": \"Computer Science\",\r\n    \"difficulty\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/questions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"questions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions by title",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/titles/language",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"titles",
+						"language"
+					]
+				},
+				"description": "Get questions with title like \"language\""
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"Ça va\",\r\n    \"valid\": true,\r\n    \"questionId\": 1\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"Sa va\",\r\n    \"valid\": false,\r\n    \"questionId\": 1\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"Yes\",\r\n    \"valid\": true,\r\n    \"questionId\": 2\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"No\",\r\n    \"valid\": false,\r\n    \"questionId\": 2\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"Evolutyon\",\r\n    \"valid\": false,\r\n    \"questionId\": 3\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"47\",\r\n    \"valid\": true,\r\n    \"questionId\": 3\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Create MCQ Choice n° 7",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mcqchoiceId\": 0,\r\n    \"choice\": \"Java\",\r\n    \"valid\": false,\r\n    \"questionId\": 4\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all mcqchoices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a MCQ Choice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"mcqchoiceId\": 9,\r\n    \"choice\": \"Evolution\",\r\n    \"valid\": false,\r\n    \"questionId\": 3\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Update MCQ Choice 9 to correct the typo"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a MCQ Choice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"mcqchoiceId\": 9,\r\n    \"choice\": \"Evolution\",\r\n    \"valid\": false,\r\n    \"questionId\": 3\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						"9"
+					]
+				},
+				"description": "Get MCQ Choice number 9"
+			},
+			"response": []
+		},
+		{
+			"name": "Get MCQ Choices by Question Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"mcqchoiceId\": 9,\r\n    \"choice\": \"Evolution\",\r\n    \"valid\": false,\r\n    \"questionId\": 3\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/questions/equals/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						"questions",
+						"equals",
+						"1"
+					]
+				},
+				"description": "Get all MCQ Choices of question 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a MCQ Choice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"mcqchoiceId\": 0,\r\n\"choice\": \"Python\",\r\n\"valid\": true,\r\n\"questionId\": 4\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/mcqchoices/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"mcqchoices",
+						""
+					]
+				},
+				"description": "Create MCQ Choicefor question 4"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all valid answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/QuizManager/answers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"QuizManager",
+						"answers",
+						""
+					]
+				},
+				"description": "Get all MCQ Choices that are valid"
+			},
+			"response": []
+		}
+	]
+}
