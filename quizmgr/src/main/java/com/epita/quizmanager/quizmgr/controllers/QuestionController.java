@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -23,7 +21,7 @@ import com.epita.quizmanager.quizmgr.services.QuestionJPADAO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(description = "Question CRUD API for MCQ quiz")
+@Api(tags = {"Question CRUD API for MCQ quiz"})
 @RestController
 public class QuestionController {
 	
@@ -43,7 +41,7 @@ public class QuestionController {
 	@GetMapping(value = "/QuizManager/questions/{id}")
 	  public Question showOneQuestion(@PathVariable int id) {
 		Question question = questionDAO.findById(id);
-		System.out.println(question);
+		
 		if(question==null) 
 			throw new ErrorNotFoundException("Questions with id " + id + " CANNOT BE FOUND.");
 		return question;

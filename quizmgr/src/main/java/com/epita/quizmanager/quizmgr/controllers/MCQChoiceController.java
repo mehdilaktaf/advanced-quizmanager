@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -24,7 +22,7 @@ import com.epita.quizmanager.quizmgr.services.MCQChoiceJPADAO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(description = "MCQChoice CRUD API for MCQ quiz")
+@Api(tags = { "MCQChoice CRUD API for MCQ quiz" })
 @RestController
 public class MCQChoiceController {
 	
@@ -71,9 +69,7 @@ public class MCQChoiceController {
 	// POST questions list route
 	// This is not working for some reason 
 	@ApiOperation(value = "Creates mcqchoices from a JSON list.")
-	@RequestMapping(
-			  value = "/QuizManager/mcqchoices/add_list", 
-			  method = RequestMethod.POST)
+	@PostMapping(value = "/QuizManager/mcqchoices/add_list")
 	public ResponseEntity<Void> addMCQChoice(@Validated @RequestBody List<MCQChoice> JSONMCQChoices) {
 		
         List<MCQChoice> mcqchoiceAdded = mcqchoiceDAO.saveAll(JSONMCQChoices);
